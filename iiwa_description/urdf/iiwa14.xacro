@@ -14,8 +14,8 @@
   <xacro:property name="joint_damping" value="0.0" />
   <xacro:property name="max_effort" value="1000"/>
   <xacro:property name="max_velocity" value="1000"/>
-  <!--xacro:property name="camera_link" value="0.025" /--> <!-- Size of square 'camera' box -->
-  <!--xacro:property name="camera_offset" value="0.025" /--> <!-- Distance of the 'camera' mount -->
+  <xacro:property name="camera_link" value="0.025" /> <!-- Size of square 'camera' box -->
+  <xacro:property name="camera_offset" value="0.025" /> <!-- Distance of the 'camera' mount -->
 
   
   <xacro:macro name="iiwa14" params="parent hardware_interface robot_name *origin">
@@ -341,15 +341,15 @@
     <link name="${robot_name}_link_ee">
     </link>
 
-    <!--joint name="camera_joint" type="fixed">
+    <joint name="camera_joint" type="fixed">
       <axis xyz="0 1 0" />
       <origin xyz="0 0 ${camera_link}" rpy="0 0 0"/>
       <parent link="${robot_name}_link_ee"/>
       <child link="camera_link"/>
-    </joint-->
+    </joint>
 
 
-      <!--link name="camera_link">
+    <link name="camera_link">
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
@@ -370,7 +370,7 @@
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
       </inertial>
-    </link-->
+    </link>
 
     
     <!--Extensions -->
